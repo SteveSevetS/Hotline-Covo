@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds577u04v852b"]
+
+[ext_resource type="Script" uid="uid://bl7sm6hivvhv3" path="res://Scenes/hud/hud.gd" id="1_u6yks"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6yks"]
+font_size = 24
+font_color = Color(0, 1, 0.0392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4welq"]
+font_size = 24
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_u6yks")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Weapon_Name_Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 165.0
+offset_bottom = 34.0
+text = "WeaponName"
+label_settings = SubResource("LabelSettings_u6yks")
+
+[node name="Ammo_Count_Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 180.0
+offset_right = 220.0
+offset_bottom = 34.0
+label_settings = SubResource("LabelSettings_4welq")

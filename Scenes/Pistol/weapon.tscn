@@ -21,3 +21,5 @@ position = Vector2(24, 1)
 
 [node name="weapon_cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="reload_cooldown" type="Timer" parent="."]

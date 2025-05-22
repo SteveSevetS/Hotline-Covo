@@ -27,7 +27,9 @@ func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if Input.is_action_pressed("fire"):
 		weapon.shoot()
+		
+	if Input.is_action_pressed("reload"):
+		weapon.bullet_count = weapon.mag_size
 
-	
 func shoot(bullet_instance, _transform):
 	emit_signal("player_fired_bullet", bullet_instance, _transform)

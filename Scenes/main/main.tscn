@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvnd3dr7ugles"]
+[gd_scene load_steps=7 format=3 uid="uid://bvnd3dr7ugles"]
 
 [ext_resource type="Script" uid="uid://bf65p6crkeb36" path="res://Scenes/main/main.gd" id="1_ibgy0"]
 [ext_resource type="PackedScene" uid="uid://dm4o34cy867x0" path="res://Scenes/Player/Player.tscn" id="2_ebwa5"]
 [ext_resource type="Texture2D" uid="uid://b00lw6v3g0pgu" path="res://assets/escape-from-tarkov-lighthouse-map.webp" id="2_wcurd"]
 [ext_resource type="PackedScene" uid="uid://ds3yvxwty4x75" path="res://Scenes/Enemy/Enemy.tscn" id="4_wcurd"]
+[ext_resource type="PackedScene" uid="uid://ds577u04v852b" path="res://Scenes/hud/hud.tscn" id="5_brlrh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1fgp"]
 
@@ -15,7 +16,7 @@ scale = Vector2(12.5, 20)
 texture = ExtResource("2_wcurd")
 
 [node name="world boundary bottom" type="StaticBody2D" parent="."]
-position = Vector2(17, 14750)
+position = Vector2(17, 14060)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world boundary bottom"]
 shape = SubResource("WorldBoundaryShape2D_w1fgp")
@@ -46,3 +47,5 @@ position = Vector2(300.231, -477.562)
 
 [node name="Player" parent="." instance=ExtResource("2_ebwa5")]
 position = Vector2(131, 181)
+
+[node name="HUD" parent="." groups=["hud"] instance=ExtResource("5_brlrh")]

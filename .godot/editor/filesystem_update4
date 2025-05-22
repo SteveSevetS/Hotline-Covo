@@ -1,0 +1,15 @@
+res://Scenes/main/main.tscn
+res://Scenes/Enemy/Enemy.tscn
+res://Scenes/Player/Player.tscn
+res://Scenes/Pistol/weapon.tscn
+res://Scenes/health.tscn
+res://Scenes/Bullet/bullet.tscn
+res://Scenes/main/main.gd
+res://Scenes/Health/health.tscn
+res://Scenes/Health/health.gd
+res://Scenes/hud/hud.tscn
+res://Scenes/hud/hud.gd
+res://Scenes/Enemy/enemy.gd
+res://Scenes/Pistol/weapon.gd
+res://Scenes/Player/Player.gd
+res://Scenes/Bullet/bullet.gd
