@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm4o34cy867x0"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_hfk82"]
+[ext_resource type="Texture2D" uid="uid://lkywofqh6ygr" path="res://icon.svg" id="2_n2by3"]
+[ext_resource type="Script" path="res://Scenes/Player/Marker2D.gd" id="2_yatm5"]
+[ext_resource type="Script" path="res://Addons/Fire Bullets/scripts/Gun.gd" id="4_5653h"]
+[ext_resource type="Texture2D" uid="uid://vwn0c3vdqw7s" path="res://Addons/Fire Bullets/assets/gun.svg" id="5_uymoi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vvfcm"]
+radius = 83.2166
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_hfk82")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vvfcm")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+script = ExtResource("2_yatm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+texture = ExtResource("2_n2by3")
+
+[node name="Gun" type="Node2D" parent="Marker2D"]
+position = Vector2(72, -1)
+script = ExtResource("4_5653h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D/Gun"]
+position = Vector2(1, 0)
+texture = ExtResource("5_uymoi")

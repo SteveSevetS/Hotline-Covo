@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm4o34cy867x0"]
+
+[ext_resource type="Script" uid="uid://cuu45m5c75rwj" path="res://Scenes/Player/Player.gd" id="1_hfk82"]
+[ext_resource type="Script" uid="uid://bd5hvxrqbs4eh" path="res://Scenes/Player/Marker2D.gd" id="2_yatm5"]
+[ext_resource type="Texture2D" uid="uid://0cjsl3gews81" path="res://assets/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png" id="3_h54ih"]
+[ext_resource type="PackedScene" uid="uid://bjihdf8whv0j1" path="res://pistol.tscn" id="4_ude3g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ude3g"]
+radius = 55.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hfk82")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ude3g")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+script = ExtResource("2_yatm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
+position = Vector2(3, -7)
+scale = Vector2(0.545, 0.65)
+texture = ExtResource("3_h54ih")
+
+[node name="Pistol" parent="Marker2D" instance=ExtResource("4_ude3g")]
+position = Vector2(48, 28)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)
+limit_left = -10000
+limit_top = -9600
+limit_right = 10000
+limit_bottom = 9600
