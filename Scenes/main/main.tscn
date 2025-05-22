@@ -1,58 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvnd3dr7ugles"]
+[gd_scene load_steps=6 format=3 uid="uid://bvnd3dr7ugles"]
 
 [ext_resource type="Script" uid="uid://bf65p6crkeb36" path="res://Scenes/main/main.gd" id="1_ibgy0"]
 [ext_resource type="PackedScene" uid="uid://dm4o34cy867x0" path="res://Scenes/Player/Player.tscn" id="2_ebwa5"]
-[ext_resource type="Texture2D" uid="uid://b6i2832kjsjx1" path="res://assets/kalos.png" id="3_4etoo"]
-[ext_resource type="PackedScene" uid="uid://ds3yvxwty4x75" path="res://Enemy.tscn" id="4_wcurd"]
+[ext_resource type="Texture2D" uid="uid://b00lw6v3g0pgu" path="res://assets/escape-from-tarkov-lighthouse-map.webp" id="2_wcurd"]
+[ext_resource type="PackedScene" uid="uid://ds3yvxwty4x75" path="res://Scenes/Enemy/Enemy.tscn" id="4_wcurd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w1fgp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4etoo"]
-size = Vector2(1001, 1378)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ibgy0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(12.5, 20)
-texture = ExtResource("3_4etoo")
-
-[node name="Player" parent="." instance=ExtResource("2_ebwa5")]
-position = Vector2(131, 181)
+texture = ExtResource("2_wcurd")
 
 [node name="world boundary bottom" type="StaticBody2D" parent="."]
-position = Vector2(0, 9600)
+position = Vector2(17, 14750)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world boundary bottom"]
 shape = SubResource("WorldBoundaryShape2D_w1fgp")
 
 [node name="world boundary top" type="StaticBody2D" parent="."]
-position = Vector2(0, -9600)
+position = Vector2(17, -14750)
 rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world boundary top"]
 shape = SubResource("WorldBoundaryShape2D_w1fgp")
 
 [node name="world boundary right" type="StaticBody2D" parent="."]
-position = Vector2(10000, 1)
+position = Vector2(16000, -65)
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world boundary right"]
 shape = SubResource("WorldBoundaryShape2D_w1fgp")
 
 [node name="world boundary left" type="StaticBody2D" parent="."]
-position = Vector2(-10000, 1)
+position = Vector2(-12597, -33)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world boundary left"]
 shape = SubResource("WorldBoundaryShape2D_w1fgp")
 
-[node name="house_1" type="StaticBody2D" parent="."]
-position = Vector2(-364.182, -1344.91)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="house_1"]
-position = Vector2(465.682, -636.091)
-shape = SubResource("RectangleShape2D_4etoo")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_wcurd")]
+[node name="Enemy_1" parent="." instance=ExtResource("4_wcurd")]
 position = Vector2(300.231, -477.562)
+
+[node name="Player" parent="." instance=ExtResource("2_ebwa5")]
+position = Vector2(131, 181)

@@ -4,11 +4,11 @@ signal player_fired_bullet(bullet)
 
 const SPEED = 2000.0
 
-@onready var sprite = $Marker2D/Alive
-@onready var pistol = $Marker2D/Pistol
+@onready var sprite = $Alive
+@onready var weapon = $Weapon
 
 func _ready() -> void:
-	pistol.connect("weapon_fired", self.shoot)
+	weapon.connect("weapon_fired", self.shoot)
 
 func _physics_process(delta):
 
@@ -23,9 +23,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("fire"):
-		pistol.shoot()
+func _process(delta: float) -> void:
+	look_at(get_global_mouse_position())
+	if Input.is_action_pressed("fire"):
+		weapon.shoot()
+
 	
 func shoot(bullet_instance, _transform):
 	emit_signal("player_fired_bullet", bullet_instance, _transform)

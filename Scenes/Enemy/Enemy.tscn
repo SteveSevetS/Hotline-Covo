@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://ds3yvxwty4x75"]
+
+[ext_resource type="Script" uid="uid://bk4a5nju8lxvp" path="res://Scenes/Enemy/enemy.gd" id="1_3l8kd"]
+[ext_resource type="Texture2D" uid="uid://b4syqxp05nsn8" path="res://assets/bk_officer/officer_walk_strip.png" id="1_tt7e2"]
+[ext_resource type="PackedScene" uid="uid://bklyjaoj07nu7" path="res://Scenes/health.tscn" id="3_e0oyi"]
+[ext_resource type="Texture2D" uid="uid://ctnb4cont31wb" path="res://assets/bk_officer/officer_die_strip.png" id="4_02vxf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqquq"]
+radius = 55.0
+
+[sub_resource type="Animation" id="Animation_02vxf"]
+resource_name = "Enemy_Death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dead:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.30593, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dead:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Alive:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fw0yv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dead:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Alive:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dead:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_seemo"]
+_data = {
+&"Enemy_Death": SubResource("Animation_02vxf"),
+&"RESET": SubResource("Animation_fw0yv")
+}
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_3l8kd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gqquq")
+
+[node name="Alive" type="Sprite2D" parent="."]
+position = Vector2(-7, 4)
+scale = Vector2(3.17, 3.17)
+texture = ExtResource("1_tt7e2")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 45)
+
+[node name="dead" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(3.17, 3.17)
+texture = ExtResource("4_02vxf")
+hframes = 4
+region_rect = Rect2(143, 0, 53, 54)
+
+[node name="Health" parent="." instance=ExtResource("3_e0oyi")]
+
+[node name="Death_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_seemo")
+}
