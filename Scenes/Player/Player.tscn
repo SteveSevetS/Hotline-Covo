@@ -1,14 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm4o34cy867x0"]
+[gd_scene load_steps=12 format=3 uid="uid://dm4o34cy867x0"]
 
 [ext_resource type="Script" uid="uid://cuu45m5c75rwj" path="res://Scenes/Player/Player.gd" id="1_hfk82"]
+[ext_resource type="Script" uid="uid://b1lpgkygd77l6" path="res://Resources/Inventory/Inventory.gd" id="2_fk5o5"]
+[ext_resource type="Script" uid="uid://d4k2dffwsg6hc" path="res://Resources/Weapon/Weapon.gd" id="3_825xp"]
 [ext_resource type="Texture2D" uid="uid://0cjsl3gews81" path="res://assets/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png" id="3_h54ih"]
+[ext_resource type="Resource" uid="uid://canixhvakttx4" path="res://Resources/Weapon/DesertEagle.tres" id="4_ji083"]
+[ext_resource type="PackedScene" uid="uid://ds577u04v852b" path="res://Scenes/hud/hud.tscn" id="4_jmcll"]
 [ext_resource type="PackedScene" uid="uid://bjihdf8whv0j1" path="res://Scenes/Pistol/weapon.tscn" id="4_ude3g"]
+[ext_resource type="Resource" uid="uid://diq6ffh15liip" path="res://Resources/Weapon/ak47.tres" id="5_0kmp4"]
+[ext_resource type="Resource" uid="uid://brttjjd7hv80" path="res://Resources/Weapon/m1104.tres" id="6_825xp"]
+
+[sub_resource type="Resource" id="Resource_i5acl"]
+script = ExtResource("2_fk5o5")
+slots = Array[ExtResource("3_825xp")]([ExtResource("4_ji083"), ExtResource("5_0kmp4"), ExtResource("6_825xp"), null, null, null])
+metadata/_custom_type_script = "uid://b1lpgkygd77l6"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ude3g"]
 radius = 55.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_hfk82")
+inventory = SubResource("Resource_i5acl")
 
 [node name="Alive" type="Sprite2D" parent="."]
 position = Vector2(-45, -36)
@@ -34,3 +46,5 @@ position = Vector2(1, -1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Walk" type="Sprite2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("4_jmcll")]

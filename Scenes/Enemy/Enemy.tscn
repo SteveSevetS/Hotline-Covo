@@ -1,9 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ds3yvxwty4x75"]
+[gd_scene load_steps=10 format=3 uid="uid://ds3yvxwty4x75"]
 
 [ext_resource type="Script" uid="uid://bk4a5nju8lxvp" path="res://Scenes/Enemy/enemy.gd" id="1_3l8kd"]
 [ext_resource type="Texture2D" uid="uid://b4syqxp05nsn8" path="res://assets/bk_officer/officer_walk_strip.png" id="1_tt7e2"]
-[ext_resource type="PackedScene" uid="uid://bklyjaoj07nu7" path="res://Scenes/Health/health.tscn" id="3_e0oyi"]
+[ext_resource type="Script" uid="uid://dxq5y3veygyvj" path="res://Resources/Health/Health.gd" id="2_02vxf"]
 [ext_resource type="Texture2D" uid="uid://ctnb4cont31wb" path="res://assets/bk_officer/officer_die_strip.png" id="4_02vxf"]
+
+[sub_resource type="Resource" id="Resource_fw0yv"]
+script = ExtResource("2_02vxf")
+max_health = 0
+health = 0
+metadata/_custom_type_script = "uid://dxq5y3veygyvj"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gqquq"]
 radius = 37.6563
@@ -119,6 +125,7 @@ _data = {
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_3l8kd")
+Health_stat = SubResource("Resource_fw0yv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gqquq")
@@ -136,8 +143,6 @@ scale = Vector2(3.17, 3.17)
 texture = ExtResource("4_02vxf")
 hframes = 4
 region_rect = Rect2(143, 0, 53, 54)
-
-[node name="Health" parent="." instance=ExtResource("3_e0oyi")]
 
 [node name="Death_Animation" type="AnimationPlayer" parent="."]
 libraries = {

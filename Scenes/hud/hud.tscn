@@ -4,7 +4,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_u6yks"]
 font_size = 24
-font_color = Color(0, 1, 0.0392157, 1)
+font_color = Color(1, 0, 0.0392157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4welq"]
 font_size = 24
@@ -15,8 +15,10 @@ script = ExtResource("1_u6yks")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 11.0
+offset_top = 599.0
+offset_right = 51.0
+offset_bottom = 639.0
 
 [node name="Weapon_Name_Label" type="Label" parent="Control"]
 layout_mode = 0

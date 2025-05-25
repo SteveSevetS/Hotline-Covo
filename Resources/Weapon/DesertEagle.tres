@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=4 format=3 uid="uid://canixhvakttx4"]
+
+[ext_resource type="Script" uid="uid://d4k2dffwsg6hc" path="res://Resources/Weapon/Weapon.gd" id="1_v4fd7"]
+[ext_resource type="AudioStream" uid="uid://x2wn0ibpk515" path="res://assets/Sdounds/Pistols/0001_desert_eagle.mp3" id="2_6gdth"]
+[ext_resource type="Texture2D" uid="uid://mvm0gk4hngc6" path="res://assets/Top_Down_Survivor/Survivor Spine/images/pistol.png" id="2_v4fd7"]
+
+[resource]
+script = ExtResource("1_v4fd7")
+w_name = "Desert Eagle"
+damage = 100
+mag_size = 7
+cooldown_secs = 0.65
+spread_angle = 1.5
+spray = Transform2D(1, 0, 0, 1, 0, 0)
+bullet_count = 7
+bullets_per_shots = 1
+cooldown_secs_reload = 2.6
+texture = ExtResource("2_v4fd7")
+sound = ExtResource("2_6gdth")
+metadata/_custom_type_script = "uid://d4k2dffwsg6hc"

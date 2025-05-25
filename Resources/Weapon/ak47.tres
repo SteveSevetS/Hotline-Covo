@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=4 format=3 uid="uid://diq6ffh15liip"]
+
+[ext_resource type="Script" uid="uid://d4k2dffwsg6hc" path="res://Resources/Weapon/Weapon.gd" id="1_k1ecr"]
+[ext_resource type="Texture2D" uid="uid://bm1ikgm8l2h1b" path="res://assets/Top_Down_Survivor/Survivor Spine/images/rifle.png" id="2_dw6j0"]
+[ext_resource type="AudioStream" uid="uid://wqv8vq2o17q7" path="res://assets/Sdounds/Rifles/0002_ak_47.mp3" id="2_ity5a"]
+
+[resource]
+script = ExtResource("1_k1ecr")
+w_name = "AK-47"
+damage = 34
+mag_size = 30
+cooldown_secs = 0.125
+spread_angle = 5.0
+spray = Transform2D(1, 0, 0, 1, 0, 0)
+bullet_count = 30
+bullets_per_shots = 1
+cooldown_secs_reload = 1.5
+texture = ExtResource("2_dw6j0")
+sound = ExtResource("2_ity5a")
+metadata/_custom_type_script = "uid://d4k2dffwsg6hc"

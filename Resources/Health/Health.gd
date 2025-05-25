@@ -1,9 +1,9 @@
-extends Node2D
+extends Resource
 
 class_name Health
 
-var max_health: int
-var health: int
+@export var max_health: int
+@export var health: int
 
 func initalize(_health: int) -> void:
 	max_health = _health
@@ -11,7 +11,6 @@ func initalize(_health: int) -> void:
 
 func decrease_health(damage: int) -> void:
 	health = clamp(health - damage, 0, max_health)
-	print(str(damage) + ":" + str(health))
 
 func is_dead() -> bool:
 	if health > 0:
