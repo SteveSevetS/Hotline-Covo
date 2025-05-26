@@ -1,13 +1,9 @@
-res://Scenes/Pistol/weapon.tscn
-res://Scenes/Enemy/enemy.gd
-res://assets/HUD/progress_bg_texture_2d.tres
 res://Scenes/main/main.tscn
+res://assets/HUD/progress_bg_texture_2d.tres
+res://assets/HUD/reload_gradient_texture_2d.tres
+res://Scenes/Enemy/enemy.gd
 res://Scenes/Enemy/Enemy.tscn
 res://Scenes/Player/Player.tscn
+res://Scenes/Pistol/weapon.tscn
 res://Scenes/Bullet/bullet.tscn
 res://Scenes/hud/hud.tscn
-res://assets/HUD/reload_gradient_texture_2d.tres
-res://Scenes/Pistol/weapon.gd
-res://Scenes/Player/Player.gd
-res://Resources/Weapon/ak47.tres
-res://Resources/Weapon/m1104.tres
