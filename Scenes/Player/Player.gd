@@ -10,7 +10,6 @@ const SPEED = 2000.0
 @onready var sprite = $Alive
 @onready var weapon = $Weapon
 @onready var hud = $HUD
-@onready var animated_Sprite = $AliveAnimated
 
 func _ready() -> void:
 	weapon.weapon_equipped = inventory.slots[0]
@@ -27,11 +26,9 @@ func _physics_process(delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
 		velocity = direction * SPEED
-		animated_Sprite.play("Jacket_Pistol_walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-		animated_Sprite.stop()
 
 	move_and_slide()
 	
@@ -60,4 +57,3 @@ func _process(delta: float) -> void:
 
 func shoot(bullet_instance, _transform):
 	emit_signal("player_fired_bullet", bullet_instance, _transform)
-	animated_Sprite.play("Jacket_Pistol_attack")

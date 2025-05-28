@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cevuxltuyv58k"
+path="res://.godot/imported/sprJacketWalk9mm.gif-9226055f9710cd14b4ae8f1dc3b64bff.tres"
+
+[deps]
+
+source_file="res://assets/sprJacketWalk9mm.gif"
+dest_files=["res://.godot/imported/sprJacketWalk9mm.gif-9226055f9710cd14b4ae8f1dc3b64bff.tres"]
+
+[params]
+
+frames_per_second=10

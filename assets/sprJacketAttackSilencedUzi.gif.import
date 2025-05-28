@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://de2dy403f5yq5"
+path="res://.godot/imported/sprJacketAttackSilencedUzi.gif-94184a4b82df16f9371c5420e8fb6c3e.tres"
+
+[deps]
+
+source_file="res://assets/sprJacketAttackSilencedUzi.gif"
+dest_files=["res://.godot/imported/sprJacketAttackSilencedUzi.gif-94184a4b82df16f9371c5420e8fb6c3e.tres"]
+
+[params]
+
+frames_per_second=10

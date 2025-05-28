@@ -20,6 +20,12 @@ config/icon="/home/stevesevets/Pictures/HotlineMiami_Icon.webp"
 enemy="All the entities that can make damage to the Player"
 Player="Who is playing the game"
 
+[importer_defaults]
+
+import_gif_to_sprite_frames={
+"frames_per_second": 10
+}
+
 [input]
 
 ui_left={

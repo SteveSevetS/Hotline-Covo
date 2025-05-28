@@ -1,7 +1,7 @@
-res://Resources/Playable_Character/Jacket.tres
 res://Scenes/Player/Player.tscn
 res://assets/HUD/progress_bg_texture_2d.tres
 res://assets/HUD/reload_gradient_texture_2d.tres
+res://Resources/Playable_Character/Jacket.tres
 res://Scenes/Enemy/enemy.gd
 res://Scenes/main/main.tscn
 res://Scenes/Enemy/Enemy.tscn

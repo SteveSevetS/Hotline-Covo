@@ -1,7 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=31 format=3 uid="uid://7aj607bfbq46"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://7aj607bfbq46"]
 
 [ext_resource type="Texture2D" uid="uid://dp0cbt2anhcmj" path="res://assets/HLM1_assets/Player/sprPAttackBossgun_strip20.png" id="1_jpsbj"]
-[ext_resource type="Texture2D" uid="uid://bu33lmpyhm46n" path="res://assets/HLM1_assets/Player/sprPWalkBossgun_strip8.png" id="2_u4y7y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmqdg"]
 atlas = ExtResource("1_jpsbj")
@@ -83,38 +82,6 @@ region = Rect2(738, 0, 41, 32)
 atlas = ExtResource("1_jpsbj")
 region = Rect2(779, 0, 41, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u4y7y"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_knw66"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6g51p"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xkkqy"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_joy6g"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a1ny2"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1uii"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iwdf"]
-atlas = ExtResource("2_u4y7y")
-region = Rect2(224, 0, 32, 32)
-
 [resource]
 animations = [{
 "frames": [{
@@ -182,31 +149,7 @@ animations = [{
 "name": &"Jacket_Pistol_attack",
 "speed": 10.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u4y7y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knw66")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6g51p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xkkqy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_joy6g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a1ny2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1uii")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1iwdf")
-}],
+"frames": [],
 "loop": true,
 "name": &"Jacket_Pistol_walk",
 "speed": 10.0
