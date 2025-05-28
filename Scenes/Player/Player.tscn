@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm4o34cy867x0"]
+[gd_scene load_steps=13 format=3 uid="uid://dm4o34cy867x0"]
 
 [ext_resource type="Script" uid="uid://cuu45m5c75rwj" path="res://Scenes/Player/Player.gd" id="1_hfk82"]
 [ext_resource type="Script" uid="uid://b1lpgkygd77l6" path="res://Resources/Inventory/Inventory.gd" id="2_fk5o5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bjihdf8whv0j1" path="res://Scenes/Pistol/weapon.tscn" id="4_ude3g"]
 [ext_resource type="Resource" uid="uid://diq6ffh15liip" path="res://Resources/Weapon/ak47.tres" id="5_0kmp4"]
 [ext_resource type="Resource" uid="uid://brttjjd7hv80" path="res://Resources/Weapon/m1104.tres" id="6_825xp"]
+[ext_resource type="SpriteFrames" uid="uid://7aj607bfbq46" path="res://Resources/Playable_Character/Jacket.tres" id="10_ji083"]
 
 [sub_resource type="Resource" id="Resource_i5acl"]
 script = ExtResource("2_fk5o5")
@@ -45,6 +46,11 @@ position = Vector2(1, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Walk" type="Sprite2D" parent="."]
-
 [node name="HUD" parent="." instance=ExtResource("4_jmcll")]
+
+[node name="AliveAnimated" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-51, -29)
+scale = Vector2(5.45, 5.45)
+sprite_frames = ExtResource("10_ji083")
+animation = &"Jacket_Pistol_walk"

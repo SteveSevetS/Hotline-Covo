@@ -1,3 +1,4 @@
+SpriteFrames
 Weapon
 Health
 Resource
